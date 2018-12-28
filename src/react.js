@@ -36,6 +36,20 @@
     constructor(properties){
       this.properties = properties;
     }
+
+    display(newProps){
+      this.newProps = newProps
+      this.shouldUpdate();
+    }
+    
+    shouldUpdate(){ 
+      if(JSON.stringify(this.properties) != JSON.stringify(this.newProps)){
+        this.properties = this.newProps;
+        this.render();
+      }else{
+        // TODO
+      }
+    }
   }
 
   window.MiniReact = {
