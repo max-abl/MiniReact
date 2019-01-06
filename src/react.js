@@ -15,15 +15,17 @@
           anElement.innerHTML += child;
         }
       });
-      Object.keys(properties).forEach(propertyName => {
-        if(/^on.*$/.test(propertyName)){// on check avec une regex si la propriété commence par "on"
-          anElement.addEventListener(
-            propertyName.substring(2).toLowerCase(),properties[propertyName]
-          );
-        }else{
-          anElement.setAttribute(propertyName, properties[propertyName]);
-        }    
-      });
+      if(properties!=null){
+        Object.keys(properties).forEach(propertyName => {
+          if(/^on.*$/.test(propertyName)){// on check avec une regex si la propriété commence par "on"
+            anElement.addEventListener(
+              propertyName.substring(2).toLowerCase(),properties[propertyName]
+            );
+          }else{
+            anElement.setAttribute(propertyName, properties[propertyName]);
+          }    
+        });
+      } 
       return anElement;
     }
   }

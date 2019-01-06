@@ -38,15 +38,35 @@ class Button extends MiniReact.Component {
   }
 }
 
+class Tick extends MiniReact.Component {
+  constructor(properties){
+    super(properties);
+  }
+  render(){
+      const result = MiniReact.createElement('h1', null, ` Slt ${this.properties.ticker}`);
+      //TODO
+      caretaker.add();
+      return result;
+  }
+}
 var caretaker = new CareTaker();
-const myBtn = MiniReact.createElement(Button,{onClick:()=>alert('yay it worked !!')},null);
+//const myBtn = MiniReact.createElement(Button,{onClick:()=>alert('yay it worked !!')},null);
 
 //const helloWorld = MiniReact.createElement(Hello, {name: 'Lolo'}, null);
 //const helloWorld2 = MiniReact.createElement(Hello, null, null);
 //const regularDiv = MiniReact.createElement('div', null, "I'm just a regular div !");
 //const parent = MiniReact.createElement('div', null, helloWorld, helloWorld2, regularDiv, "I'm just a text");
+//const helloWorld2 = MiniReact.createElement(Hello, null, null);
+//const helloWorld = MiniReact.createElement(Tick, {time: 100}, null);
 
-MiniReactDOM.render(myBtn, document.getElementById('root'));
+function tick() {
+  const time = new Date().toLocaleTimeString();
+  const clockElement = MiniReact.createElement(Tick, {ticker: time}, null);
+  MiniReactDOM.render(clockElement, document.getElementById('root'));
+}
+
+tick();
+setInterval(tick, 1000);
 
 // TODO 
 // Routing
