@@ -1,9 +1,5 @@
-//const Hello = ({name}) => {
-//  return MiniReact.createElement('div', null, `Hello ${name}`);
-//};
-
 class CareTaker {
-  constructor(){
+  constructor() {
     this.mementos = {};
   }
   add(key, memento) {
@@ -14,24 +10,36 @@ class CareTaker {
   }
 }
 
-class Hello extends MiniReact.Component { // Déclaration du Component Hello 
-  constructor(properties){
+// Composanta Hello
+class Hello extends MiniReact.Component {
+
+  constructor(properties) {
     super(properties);
   }
-  render(){
-      const result = MiniReact.createElement('div', null, `Hello ${this.properties.name}`);
-      //TODO
-      caretaker.add();
-      return result;
+  render() {
+    const result = MiniReact.createElement(
+      "div",
+      null,
+      `Hello ${this.properties.name}`
+    );
+
+    //TODO
+    caretaker.add();
+    return result;
   }
 }
 
 class Button extends MiniReact.Component {
-  constructor(properties){
+  constructor(properties) {
     super(properties);
   }
-  render(){
-    const result = MiniReact.createElement('button',{onclick: this.properties.onClick}, `Click me !`);
+  render() {
+    const result = MiniReact.createElement(
+      "button",
+      { onclick: this.properties.onClick },
+      `Click me !`
+    );
+
     //TODO
     caretaker.add();
     return result;
@@ -39,19 +47,26 @@ class Button extends MiniReact.Component {
 }
 
 class Tick extends MiniReact.Component {
-  constructor(properties){
+  constructor(properties) {
     super(properties);
   }
-  render(){
-      const result = MiniReact.createElement('h1', null, ` Slt ${this.properties.ticker}`);
-      //TODO
-      caretaker.add();
-      return result;
+
+  render() {
+    const result = MiniReact.createElement(
+      "span",
+      null,
+      `Countup : ${this.properties.ticker} <br />`
+    );
+
+    //TODO
+    caretaker.add();
+    return result;
   }
 }
-var caretaker = new CareTaker();
-//const myBtn = MiniReact.createElement(Button,{onClick:()=>alert('yay it worked !!')},null);
 
+var caretaker = new CareTaker();
+
+//const myBtn = MiniReact.createElement(Button,{onClick:()=>alert('yay it worked !!')},null);
 //const helloWorld = MiniReact.createElement(Hello, {name: 'Lolo'}, null);
 //const helloWorld2 = MiniReact.createElement(Hello, null, null);
 //const regularDiv = MiniReact.createElement('div', null, "I'm just a regular div !");
@@ -59,14 +74,20 @@ var caretaker = new CareTaker();
 //const helloWorld2 = MiniReact.createElement(Hello, null, null);
 //const helloWorld = MiniReact.createElement(Tick, {time: 100}, null);
 
+// 
 function tick() {
+  // Controller tick
   const time = new Date().toLocaleTimeString();
-  const clockElement = MiniReact.createElement(Tick, {ticker: time}, null);
-  MiniReactDOM.render(clockElement, document.getElementById('root'));
+
+  // Creation du template de tck
+  const clockElement = MiniReact.createElement(Tick, { ticker: time }, null);
+
+  // Rendu de l'element
+  MiniReactDOM.render(clockElement, document.getElementById("root"));
 }
 
 tick();
 setInterval(tick, 1000);
 
-// TODO 
+// TODO
 // Routing
