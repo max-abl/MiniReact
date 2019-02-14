@@ -1,0 +1,56 @@
+/* --- PRIMITIF --- */
+body {
+  background: black;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  min-width: 100px;
+}
+
+a:hover {
+  color: white;
+}
+
+/* --- Classes --- */
+.container {
+  width: 50%;
+  margin: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* --- Couleurs --- */
+.color-blue {
+  color: blue;
+}
+
+.color-yellow {
+  color: yellow;
+}
+
+.color-green {
+  color: green;
+}
+
+.color-red {
+  color: red;
+}
+
+/* --- Marges --- */
+.mb-5 {
+  margin-bottom: 5em;
+}

@@ -2,8 +2,22 @@
 <html>
   <head>
     <title>Mini React</title>
+    <link rel="stylesheet" type="text/css" href="./assets/style/clock.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/style/main.css" />
   </head>
   <body id="root">
+    <header class="container text-center color-blue mb-5">
+      <h2>- CENTRE DE TEST MINI REACT -</h2>
+      <nav>
+        <a class="color-red" href="./">Home</a>
+        <a class="color-green" href="./tableau">Tableau</a>
+        <a class="color-yellow" href="./jitterclick">JitterClick</a>
+      </nav>
+    </header>
+
+    <div class="container text-center">
+      <div class="icecube" id="horloge"></div>
+    </div>
     <script type="module" src="./src/app.js"></script>
   </body>
 </html>

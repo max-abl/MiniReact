@@ -1,39 +1,5 @@
 import { isClass, isStateLessComponent } from "./react-utils.js";
-
-// Définition de la class Component
-class Component {
-  constructor(properties) {
-    this.properties = properties;
-    this.state = {};
-    this.prevState;
-    this.prevRender = null;
-  }
-
-  display = () => {
-    if (this.shouldUpdate()) this.prevRender = this.render();
-    return this.prevRender;
-  };
-
-  setState = newState => {
-    this.prevState = this.state;
-    this.state = newState;
-    this.display();
-    this.componentDidUpdate();
-  };
-
-  componentDidUpdate = () => {};
-
-  getState = () => {
-    return this.state;
-  };
-
-  shouldUpdate = () => {
-    return (
-      JSON.stringify(this.properties) != JSON.stringify(this.newProps) ||
-      JSON.stringify(this.state) != JSON.stringify(this.prevState)
-    );
-  };
-}
+import { Component } from "./react-component.js";
 
 // AnElement
 function anElement(element, properties, children) {
@@ -48,12 +14,11 @@ function anElement(element, properties, children) {
       if (typeof child === "object") {
         anElement.appendChild(child);
       } else {
-        anElement.innerHTML += child;
+        anElement.innerHTML += child; // A modifier
       }
     });
     if (properties != null) {
       Object.keys(properties).forEach(propertyName => {
-        // On check avec une regex si la propriété commence par "on"
         if (/^on.*$/.test(propertyName)) {
           anElement.addEventListener(
             propertyName.substring(2).toLowerCase(),
@@ -91,7 +56,6 @@ export const MiniReactDOM = {
       domElement.replaceChild(child, prevChild);
       prevChild = child;
     };
-
     domElement.appendChild(prevChild);
   }
 };
