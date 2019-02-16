@@ -1,6 +1,14 @@
 ### MiniReact
 
-[![CodeFactor](https://www.codefactor.io/repository/github/javabetterthanphp/minireact/badge)](https://www.codefactor.io/repository/github/javabetterthanphp/minireact)
-[![Build Status](https://travis-ci.com/JavaBetterThanPHP/MiniReact.svg?branch=master)](https://travis-ci.com/JavaBetterThanPHP/MiniReact)
+[![CodeFactor](https://www.codefactor.io/repository/github/max-abl/minireact/badge)](https://www.codefactor.io/repository/github/max-abl/minireact)
 
 Statut : En cours de developpement
+
+- [x] Composant
+- [x] React DOM
+- [x] States
+- [x] TypeCheck
+- [ ] Routeur
+- [ ] Chargement de page
+- [ ] Tableau
+- [ ] Bonus : JitterClick
