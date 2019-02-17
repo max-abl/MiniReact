@@ -1,39 +1,40 @@
 import { MiniReactDOM } from "./lib/react.js";
+import { router, route } from "./router.js";
 import { TickComponent } from "./component/tick-component.js";
 import { HeaderComponent } from "./component/header-component.js";
 import { PageComponent } from "./component/page-component.js";
-import { router } from "./router.js";
+import { ErrorNotFoundComponent } from "./component/404-component.js";
 
 // Creation de l'arboresence
 MiniReactDOM.render(PageComponent, document.getElementById("root"), {});
 MiniReactDOM.render(HeaderComponent, document.getElementById("header"), {
-  router
+  router // Je me sers du routeur pour crée mon composant
 });
 
-console.log(router);
+var contentElement = document.getElementById("content");
 
-// Récuperation de la route courante
-var route = router.routes.filter(function(r) {
-  return r.getPath() === window.location.pathname;
-})[0];
-
-// Si pas de route trouvé
-if (!route)
-  console.log(`Error 4O4 : not found (url : ${window.location.pathname}`);
-
-// Affichage
-switch (route.getName()) {
-  case "Home":
-    MiniReactDOM.render(TickComponent, document.getElementById("content"), {
+// Affichage en fonction de la route
+switch (!route ? null : route.getId()) {
+  case "home":
+    // Si on est sur la route home
+    MiniReactDOM.render(TickComponent, contentElement, {
       interval: 1000
     });
     break;
 
-  case "Tableau":
+  case "tableau":
+    // Si on est sur la route tableau
     console.log("Tableau in progess");
     break;
 
-  case "JitterClick":
+  case "jitterclick":
+    // Si on est sur la route jitterclick
     console.log("JitterClick in progess");
+    break;
+
+  default:
+    console.log("oui");
+    // Not found
+    MiniReactDOM.render(ErrorNotFoundComponent, contentElement, {});
     break;
 }
