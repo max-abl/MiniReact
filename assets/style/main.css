@@ -33,6 +33,10 @@ a:hover {
   text-align: center;
 }
 
+.link{
+    cursor: pointer;
+}
+
 /* --- Couleurs --- */
 .color-blue {
   color: blue;
