@@ -14,18 +14,27 @@ export class Router {
 }
 
 export class Route {
-  constructor(name, path, linkElement) {
+  constructor(name, id, path, className) {
     this.name = name;
+    this.id = id;
     this.path = path;
-    this.linkElement = linkElement;
+    this.className = className;
   }
 
   getName = () => {
     return this.name;
   };
 
+  getId = () => {
+    return this.id;
+  };
+
   getPath = () => {
     return this.path;
+  };
+
+  getClassName = () => {
+    return this.className;
   };
 
   getLinkElement = () => {

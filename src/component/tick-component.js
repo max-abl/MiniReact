@@ -10,8 +10,15 @@ export class TickComponent extends Component {
   }
 
   render = () => {
-    // TODO : interpolate
-    const result = MiniReact.createElement("h1", null, `${this.state.ticker}`);
+    const result = MiniReact.createElement(
+      "div",
+      { class: "conainer text-center" },
+      MiniReact.createElement(
+        "h1",
+        { class: "icecub", id: "horloge" },
+        `${this.state.ticker}`
+      )
+    );
     return result;
   };
 

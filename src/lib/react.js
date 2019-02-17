@@ -14,7 +14,7 @@ function anElement(element, properties, children) {
       if (typeof child === "object") {
         anElement.appendChild(child);
       } else {
-        anElement.innerHTML += child; // A modifier
+        anElement.textContent += child;
       }
     });
     if (properties != null) {
