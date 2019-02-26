@@ -1,0 +1,15 @@
+#jitter {
+  margin: auto;
+  border: 2px solid cyan;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#jitter:hover {
+  border: 2px solid cornflowerblue;
+}
+
+
+.align-middle {
+  vertical-align: middle!important;
+}

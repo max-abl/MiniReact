@@ -12,13 +12,18 @@ export class TickComponent extends Component {
   render = () => {
     const result = MiniReact.createElement(
       "div",
-      { class: "conainer text-center" },
+      { class: "container text-center" },
       MiniReact.createElement(
         "h1",
         { class: "icecub", id: "horloge" },
-        `${this.state.ticker}`
+        `${
+          this.state.ticker == null
+            ? new Date().toLocaleTimeString()
+            : this.state.ticker
+        }`
       )
     );
+
     return result;
   };
 

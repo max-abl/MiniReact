@@ -4,6 +4,7 @@ import { TickComponent } from "./component/tick-component.js";
 import { HeaderComponent } from "./component/header-component.js";
 import { PageComponent } from "./component/page-component.js";
 import { ErrorNotFoundComponent } from "./component/404-component.js";
+import { JitterComponent } from "./component/jitter-component.js";
 
 // Creation de l'arboresence
 MiniReactDOM.render(PageComponent, document.getElementById("root"), {});
@@ -29,7 +30,9 @@ switch (!route ? null : route.getId()) {
 
   case "jitterclick":
     // Si on est sur la route jitterclick
-    console.log("JitterClick in progess");
+    MiniReactDOM.render(JitterComponent, contentElement, {
+      interval: 5
+    });
     break;
 
   default:
