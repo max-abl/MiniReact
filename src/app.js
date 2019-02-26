@@ -1,6 +1,7 @@
 import { MiniReactDOM } from "./lib/react.js";
 import { router, route } from "./router.js";
 import { TickComponent } from "./component/tick-component.js";
+import { TableComponent } from "./component/table-component.js";
 import { HeaderComponent } from "./component/header-component.js";
 import { PageComponent } from "./component/page-component.js";
 import { ErrorNotFoundComponent } from "./component/404-component.js";
@@ -25,7 +26,7 @@ switch (!route ? null : route.getId()) {
 
   case "tableau":
     // Si on est sur la route tableau
-    console.log("Tableau in progess");
+    MiniReactDOM.render(TableComponent, contentElement, {});
     break;
 
   case "jitterclick":
