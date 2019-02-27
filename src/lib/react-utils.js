@@ -1,14 +1,22 @@
-// Check si c'est pas une class
-export function isClass(element) {
-  return (
-    typeof element === "function" &&
-    /^class\s/.test(Function.prototype.toString.call(element))
-  );
+String.prototype.snake_case = function() {
+  var input = this;
+  return input.toLowerCase().split(" ").join("_");
 }
+
+Number.prototype.createScore = function() {
+  return this*1270;
+};
+
+Object.prototype.isClass = () => {
+  return (
+    typeof this === "function" &&
+    /^class\s/.test(Function.prototype.toString.call(this))
+  );
+};
 
 // Si c'est pas une class ou une fonction
 export function isStateLessComponent(element) {
-  return !isClass(element) && typeof element === "function";
+  return !(element.isClass()) && typeof element === "function";
 }
 
 // TypeCheck v1

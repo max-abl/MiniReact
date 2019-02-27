@@ -35,7 +35,7 @@ export class JitterComponent extends Component {
         MiniReact.createElement(
           "h1",
           { class: "align-middle" },
-          `Your score : ${this.nbr_click}`
+          `Your score : ${(this.nbr_click).createScore()}`
         )
       ),
       MiniReact.createElement(
@@ -58,7 +58,7 @@ export class JitterComponent extends Component {
   stopCount = () => {
     window.onkeydown = null;
     clearInterval(this.timer);
-    alert("Your score : " + this.nbr_click);
+    alert("Your score : " + (this.nbr_click).createScore());
   };
 
   // On click

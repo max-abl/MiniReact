@@ -1,9 +1,9 @@
-import { isClass, isStateLessComponent } from "./react-utils.js";
+import { isStateLessComponent } from "./react-utils.js";
 import { Component } from "./react-component.js";
 
 // AnElement
 function anElement(element, properties, children) {
-  if (isClass(element)) {
+  if (element.isClass()) {
     const component = new element(properties);
     return component.render();
   } else if (isStateLessComponent(element)) {
