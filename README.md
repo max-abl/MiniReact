@@ -1,13 +1,15 @@
 ## <b> MINI REACT - JS - ESGI 4AIW3 </b>
+
 ---
 
 <b> /!\ ATTENTION : NE FONCTIONNE QUE SUR GOOGLE CHROME /!\ </b>
 
 Groupe 12 : AUBLET / CANAVAGGIO / LONGUET
 
- [![CodeFactor](https://www.codefactor.io/repository/github/max-abl/minireact/badge)](https://www.codefactor.io/repository/github/max-abl/minireact)
+[![CodeFactor](https://www.codefactor.io/repository/github/max-abl/minireact/badge)](https://www.codefactor.io/repository/github/max-abl/minireact)
 
-### Pré-requis : 
+### Pré-requis :
+
 - PHP
 - Google Chrome
 
@@ -26,8 +28,6 @@ $ php -S 127.0.0.1:8080
 - [x] States
 - [x] TypeCheck
 - [x] Routeur
-- [ ] Chargement de page
+- [x] Chargement de page
 - [ ] Tableau
 - [x] Bonus : JitterClick
-
-
