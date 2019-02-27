@@ -33,8 +33,8 @@ a:hover {
   text-align: center;
 }
 
-.link{
-    cursor: pointer;
+.link {
+  cursor: pointer;
 }
 
 /* --- Couleurs --- */
@@ -63,27 +63,17 @@ a:hover {
   margin-top: 5em;
 }
 
-.customers {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+/* Buttons */
+.btn {
+  color: #c800fa;
+  border-radius: 3px;
+  border-color: #c800fa;
+  background: rgba(0, 0, 0, 0);
 }
 
-.customers td, .customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-.customers tr:nth-child(even){background-color: #afafaf;}
-.customers tr:nth-child(odd){background-color: #838383;}
-
-
-.customers tr:hover {background-color: #ddd;}
-
-.customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
+.btn:hover {
+  color: black;
+  border-radius: 3px;
+  border-color: #c800fa;
+  background: #c800fa;
 }

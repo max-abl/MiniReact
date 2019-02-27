@@ -5,16 +5,15 @@ import { Component } from "./../lib/react-component.js";
 export class HeaderComponent extends Component {
   constructor(properties) {
     super(properties);
-    this.headerTitle =(" - REACT FAIT MAISON - ").snake_case();
+    this.headerTitle = " - REACT FAIT MAISON - ".snake_case();
     this.routes = prop_access(properties.router, "routes");
     this.selectedLink = window.location.pathname;
   }
 
   // Fonction de rendu
   render = () => {
-
     // Recup
-    console.log(this.selectedLink)
+    console.log(this.selectedLink);
 
     // Construction des liens
     var routeHome = this.routes.filter(function(r) {

@@ -5,9 +5,13 @@ export class ButtonComponent extends Component {
   constructor(properties) {
     super(properties);
   }
+
   render() {
-    const result = MiniReact.createElement('button',{onclick: this.properties.onClick}, `Reset`);
+    const result = MiniReact.createElement(
+      "button",
+      { class: "btn", onclick: this.properties.onClick },
+      `Restart`
+    );
     return result;
-  };
-   //const myBtn = MiniReact.createElement(Button,{onClick:()=>alert('yay it worked !!')},null);
+  }
 }

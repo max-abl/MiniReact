@@ -19,18 +19,20 @@ export class JitterComponent extends Component {
     this.nbr_click = 0;
   }
 
-  myBtn = new ButtonComponent({onClick:()=>alert('yay it worked !!')}).render();
+  myBtn = new ButtonComponent({
+    onClick: () => document.location.reload(true)
+  }).render();
 
   // Affichage
   render = () => {
     const result = MiniReact.createElement(
       "div",
       { class: "container text-center" },
-      this.myBtn,
+      "Notre score 61 en 5s, seriez vous capable de nous battre ?",
       MiniReact.createElement(
-        "h3",
+        "h1",
         { class: "text-center", id: "counter" },
-        "SPAM PRESS B"
+        "SPAM B !"
       ),
       MiniReact.createElement(
         "div",
@@ -39,13 +41,18 @@ export class JitterComponent extends Component {
         MiniReact.createElement(
           "h1",
           { class: "align-middle" },
-          `Your score : ${(this.nbr_click).createScore()}`
+          `Your score : ${this.nbr_click}`
         )
       ),
       MiniReact.createElement(
         "h1",
         { class: "text-center" },
         `Counter : ${this.state.time != null ? this.state.time : "READY ?"}`
+      ),
+      MiniReact.createElement(
+        "div",
+        { class: "container text-center" },
+        this.myBtn
       )
     );
     return result;
@@ -62,7 +69,9 @@ export class JitterComponent extends Component {
   stopCount = () => {
     window.onkeydown = null;
     clearInterval(this.timer);
-    alert("Your score : " + (this.nbr_click).createScore());
+    if (this.nbr_click < 61) alert("C'EST PAS TERRIBLE :/");
+    else if (this.nbr_click == 61) alert("Impresionnant :o");
+    else alert("Bien joué ! Ca mérite bien un 20/20 non ? ;)");
   };
 
   // On click
@@ -73,10 +82,11 @@ export class JitterComponent extends Component {
   };
 
   // Compteur de click
-  counter = () => {
-    this.nbr_click++;
-    console.log(this.nbr_click);
-    this.setState({ time: this.temps, count: this.nbr_click });
+  counter = e => {
+    if (e.key === "b") {
+      this.nbr_click++;
+      this.setState({ time: this.temps, count: this.nbr_click.createScore(1) });
+    }
   };
 
   // Modèle des propriété

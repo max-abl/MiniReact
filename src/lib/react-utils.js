@@ -1,12 +1,20 @@
+// Snake case ;)
 String.prototype.snake_case = function() {
   var input = this;
-  return input.toLowerCase().split(" ").join("_");
-}
-
-Number.prototype.createScore = function() {
-  return this*1270;
+  return input
+    .toLowerCase()
+    .split(" ")
+    .join("_");
 };
 
+// Prototype pour compter le score parce que en vrai on a pas trop d'idée
+Number.prototype.createScore = function(nbr) {
+  if (type_check(nbr, 'number')) return this + nbr;
+  else return this + 1;
+};
+
+
+// Prototype check if class
 Object.prototype.isClass = () => {
   return (
     typeof this === "function" &&
@@ -16,7 +24,7 @@ Object.prototype.isClass = () => {
 
 // Si c'est pas une class ou une fonction
 export function isStateLessComponent(element) {
-  return !(element.isClass()) && typeof element === "function";
+  return !element.isClass() && typeof element === "function";
 }
 
 // TypeCheck v1
