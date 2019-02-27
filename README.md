@@ -25,9 +25,9 @@ $ php -S 127.0.0.1:8080
 - [x] React DOM
 - [x] States
 - [x] TypeCheck
-- [ ] Routeur
+- [x] Routeur
 - [ ] Chargement de page
 - [ ] Tableau
-- [ ] Bonus : JitterClick
+- [x] Bonus : JitterClick
 
 
