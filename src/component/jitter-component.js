@@ -1,6 +1,7 @@
 import { type_check } from "../lib/react-utils.js";
 import { MiniReact } from "../lib/react.js";
 import { Component } from "./../lib/react-component.js";
+import { ButtonComponent } from "./button-component.js";
 
 export class JitterComponent extends Component {
   constructor(properties) {
@@ -18,11 +19,14 @@ export class JitterComponent extends Component {
     this.nbr_click = 0;
   }
 
+  myBtn = new ButtonComponent({onClick:()=>alert('yay it worked !!')}).render();
+
   // Affichage
   render = () => {
     const result = MiniReact.createElement(
       "div",
       { class: "container text-center" },
+      this.myBtn,
       MiniReact.createElement(
         "h3",
         { class: "text-center", id: "counter" },

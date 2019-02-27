@@ -6,13 +6,13 @@ import { HeaderComponent } from "./component/header-component.js";
 import { PageComponent } from "./component/page-component.js";
 import { ErrorNotFoundComponent } from "./component/404-component.js";
 import { JitterComponent } from "./component/jitter-component.js";
+import { ButtonComponent } from "./component/button-component.js";
 
 // Creation de l'arboresence
 MiniReactDOM.render(PageComponent, document.getElementById("root"), {});
 MiniReactDOM.render(HeaderComponent, document.getElementById("header"), {
   router // Je me sers du routeur pour crée mon composant
 });
-
 
 var promise = new Promise(function (resolve, reject) {
   var contentElement = document.getElementById("content");

@@ -1,4 +1,3 @@
-import { type_check } from "../lib/react-utils.js";
 import { MiniReact } from "../lib/react.js";
 import { Component } from "../lib/react-component.js";
 
