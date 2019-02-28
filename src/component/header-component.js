@@ -16,16 +16,16 @@ export class HeaderComponent extends Component {
     console.log(this.selectedLink);
 
     // Construction des liens
-    var routeHome = this.routes.filter(function (r) {
+    var routeHome = this.routes.filter(function(r) {
       return r.getId() === "home";
     })[0];
-    var routeFile = this.routes.filter(function (r) {
+    var routeFile = this.routes.filter(function(r) {
       return r.getId() === "file";
     })[0];
     var routeScore = this.routes.filter(function(r) {
       return r.getId() === "score";
     })[0];
-    var routeJitter = this.routes.filter(function (r) {
+    var routeJitter = this.routes.filter(function(r) {
       return r.getId() === "jitterclick";
     })[0];
 
@@ -66,19 +66,6 @@ export class HeaderComponent extends Component {
         MiniReact.createElement(
           "a",
           {
-            class: routeFile.getClassName(),
-            id: routeFile.getId(),
-            href: "." + routeFile.getPath(),
-            style:
-              this.selectedLink === routeFile.getPath()
-                ? "text-decoration: underline"
-                : ""
-          },
-          routeFile.getName()
-        ),
-        MiniReact.createElement(
-          "a",
-          {
             class: routeScore.getClassName(),
             id: routeScore.getId(),
             href: "." + routeScore.getPath(),
@@ -88,6 +75,19 @@ export class HeaderComponent extends Component {
                 : ""
           },
           routeScore.getName()
+        ),
+        MiniReact.createElement(
+          "a",
+          {
+            class: routeFile.getClassName(),
+            id: routeFile.getId(),
+            href: "." + routeFile.getPath(),
+            style:
+              this.selectedLink === routeFile.getPath()
+                ? "text-decoration: underline"
+                : ""
+          },
+          routeFile.getName()
         )
       )
     );
