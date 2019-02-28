@@ -59,6 +59,10 @@ a:hover {
   margin-bottom: 5em;
 }
 
+.mb-1 {
+  margin-bottom: 1em;
+}
+
 .mt-5 {
   margin-top: 5em;
 }

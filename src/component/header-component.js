@@ -19,8 +19,8 @@ export class HeaderComponent extends Component {
     var routeHome = this.routes.filter(function(r) {
       return r.getId() === "home";
     })[0];
-    var routeTableau = this.routes.filter(function(r) {
-      return r.getId() === "tableau";
+    var routeScore = this.routes.filter(function(r) {
+      return r.getId() === "score";
     })[0];
     var routeJitter = this.routes.filter(function(r) {
       return r.getId() === "jitterclick";
@@ -50,19 +50,6 @@ export class HeaderComponent extends Component {
         MiniReact.createElement(
           "a",
           {
-            class: routeTableau.getClassName(),
-            id: routeTableau.getId(),
-            href: "." + routeTableau.getPath(),
-            style:
-              this.selectedLink === routeTableau.getPath()
-                ? "text-decoration: underline"
-                : ""
-          },
-          routeTableau.getName()
-        ),
-        MiniReact.createElement(
-          "a",
-          {
             class: routeJitter.getClassName(),
             id: routeJitter.getId(),
             href: "." + routeJitter.getPath(),
@@ -72,6 +59,19 @@ export class HeaderComponent extends Component {
                 : ""
           },
           routeJitter.getName()
+        ),
+        MiniReact.createElement(
+          "a",
+          {
+            class: routeScore.getClassName(),
+            id: routeScore.getId(),
+            href: "." + routeScore.getPath(),
+            style:
+              this.selectedLink === routeScore.getPath()
+                ? "text-decoration: underline"
+                : ""
+          },
+          routeScore.getName()
         )
       )
     );
