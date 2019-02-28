@@ -16,13 +16,16 @@ export class HeaderComponent extends Component {
     console.log(this.selectedLink);
 
     // Construction des liens
-    var routeHome = this.routes.filter(function(r) {
+    var routeHome = this.routes.filter(function (r) {
       return r.getId() === "home";
     })[0];
-    var routeTableau = this.routes.filter(function(r) {
+    var routeFile = this.routes.filter(function (r) {
+      return r.getId() === "file";
+    })[0];
+    var routeTableau = this.routes.filter(function (r) {
       return r.getId() === "tableau";
     })[0];
-    var routeJitter = this.routes.filter(function(r) {
+    var routeJitter = this.routes.filter(function (r) {
       return r.getId() === "jitterclick";
     })[0];
 
@@ -46,6 +49,19 @@ export class HeaderComponent extends Component {
                 : ""
           },
           routeHome.getName()
+        ),
+        MiniReact.createElement(
+          "a",
+          {
+            class: routeFile.getClassName(),
+            id: routeFile.getId(),
+            href: "." + routeFile.getPath(),
+            style:
+              this.selectedLink === routeFile.getPath()
+                ? "text-decoration: underline"
+                : ""
+          },
+          routeFile.getName()
         ),
         MiniReact.createElement(
           "a",

@@ -3,6 +3,7 @@ import { Router, Route } from "./lib/react-routing.js";
 // Creation du routeur
 export var router = new Router("mainRouter", [
   new Route("Home", "home", "/", "link color-red"),
+  new Route("File", "file", "/file", "link color-blue"),
   new Route("Tableau", "tableau", "/tableau", "link color-green"),
   new Route("JitterClick", "jitterclick", "/jitterclick", "link color-yellow")
 ]);
