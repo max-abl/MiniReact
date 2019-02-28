@@ -6,7 +6,6 @@ import { HeaderComponent } from "./component/header-component.js";
 import { PageComponent } from "./component/page-component.js";
 import { ErrorNotFoundComponent } from "./component/404-component.js";
 import { JitterComponent } from "./component/jitter-component.js";
-import { ButtonComponent } from "./component/button-component.js";
 import { InputFileComponent } from "./component/input-file-component.js";
 
 // Initialisation de l'arboresence
@@ -44,7 +43,7 @@ promise.then(
         });
         break;
 
-      case "tableau":
+      case "score":
         // Si on est sur la route tableau
         MiniReactDOM.render(TableComponent, contentElement, {});
         break;

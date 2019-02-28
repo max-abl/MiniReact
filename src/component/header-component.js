@@ -22,8 +22,8 @@ export class HeaderComponent extends Component {
     var routeFile = this.routes.filter(function (r) {
       return r.getId() === "file";
     })[0];
-    var routeTableau = this.routes.filter(function (r) {
-      return r.getId() === "tableau";
+    var routeScore = this.routes.filter(function(r) {
+      return r.getId() === "score";
     })[0];
     var routeJitter = this.routes.filter(function (r) {
       return r.getId() === "jitterclick";
@@ -53,6 +53,19 @@ export class HeaderComponent extends Component {
         MiniReact.createElement(
           "a",
           {
+            class: routeJitter.getClassName(),
+            id: routeJitter.getId(),
+            href: "." + routeJitter.getPath(),
+            style:
+              this.selectedLink === routeJitter.getPath()
+                ? "text-decoration: underline"
+                : ""
+          },
+          routeJitter.getName()
+        ),
+        MiniReact.createElement(
+          "a",
+          {
             class: routeFile.getClassName(),
             id: routeFile.getId(),
             href: "." + routeFile.getPath(),
@@ -66,28 +79,15 @@ export class HeaderComponent extends Component {
         MiniReact.createElement(
           "a",
           {
-            class: routeTableau.getClassName(),
-            id: routeTableau.getId(),
-            href: "." + routeTableau.getPath(),
+            class: routeScore.getClassName(),
+            id: routeScore.getId(),
+            href: "." + routeScore.getPath(),
             style:
-              this.selectedLink === routeTableau.getPath()
+              this.selectedLink === routeScore.getPath()
                 ? "text-decoration: underline"
                 : ""
           },
-          routeTableau.getName()
-        ),
-        MiniReact.createElement(
-          "a",
-          {
-            class: routeJitter.getClassName(),
-            id: routeJitter.getId(),
-            href: "." + routeJitter.getPath(),
-            style:
-              this.selectedLink === routeJitter.getPath()
-                ? "text-decoration: underline"
-                : ""
-          },
-          routeJitter.getName()
+          routeScore.getName()
         )
       )
     );
