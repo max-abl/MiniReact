@@ -10,8 +10,8 @@ Groupe 12 : AUBLET / CANAVAGGIO / LONGUET
 
 ### Pré-requis :
 
-- PHP
-- Google Chrome
+- PHP, comme ça.
+- Et bien sur Google Chrome est de mise
 
 ### Lancement :
 
@@ -20,14 +20,3 @@ $ cd MiniReact
 
 $ php -S 127.0.0.1:8080
 ```
-
-### Statut du developpment :
-
-- [x] Composant
-- [x] React DOM
-- [x] States
-- [x] TypeCheck
-- [x] Routeur
-- [x] Chargement de page
-- [ ] Tableau
-- [x] Bonus : JitterClick
