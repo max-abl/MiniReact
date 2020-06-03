@@ -8,12 +8,12 @@ Groupe 12 : AUBLET / CANAVAGGIO / LONGUET
 
 [![CodeFactor](https://www.codefactor.io/repository/github/max-abl/minireact/badge)](https://www.codefactor.io/repository/github/max-abl/minireact)
 
-### Pré-requis :
+### Pré-requis:
 
 - PHP, comme ça.
 - Et bien sur Google Chrome est de mise
 
-### Lancement :
+### Lancement:
 
 ```bash
 $ cd MiniReact
